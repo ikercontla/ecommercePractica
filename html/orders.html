@@ -3,35 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Mis Pedidos</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/ecommerce.js"></script>
 </head>
 <body>
 
-   <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg" id="mi-navbar">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" id="mi-navbar">
         <div class="container">
-
-            <a class="navbar-brand" href="index.html">TAVO</a>
+            <a class="navbar-brand" href="home.html">TAVO</a>
             <form class="d-flex me-3">
                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
                 <button class="btn btn-outline-success" type="submit">
                     <i class="fas fa-search lupa-icon"></i>
                 </button>
             </form>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <!-- Dropdown para Mi Cuenta -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Mi Cuenta
@@ -44,7 +39,8 @@
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <a href="shopping_cart.html" class="nav-link">
-                        <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+                            <i class="fas fa-shopping-cart" style="font-size: 1.5rem;"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -125,57 +121,39 @@
         </div>
     </div>
 
-    <div class="container mt-4">
-    <h2 class="text-center">Resumen de Compra</h2>
-
-    <div class="row">
-        <div class="col-md-8">
-            <!-- Producto 1 -->
-            <div class="media border p-3 mb-3">
-                <div class="media-body">
-                    <h5 class="mt-0">Mesa redonda
-                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                    </h5>
-                    <p>Cantidad: <input type="number" value="1" class="w-25"></p>
-                    <p>Precio: 150.00 $</p>
-                </div>
-                <div class="media-right align-self-center">
-                    <img src="img/producto1.jpg" class="img-fluid w-50" alt="=">
-                </div>
-            </div>
-
-            <!-- Producto 2 -->
-            <div class="media border p-3 mb-3">
-                <div class="media-body">
-                    <h5 class="mt-0">Mesa Cuadrada
-                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                    </h5>
-                    <p>Cantidad: <input type="number" value="1" class="w-25"></p>
-                    <p>Precio: 200.00 $</p>
-                </div>
-                <div class="media-right align-self-center">
-                    <img src="img/producto2.jpg" class="img-fluid w-50" alt="">
-                </div>
-            </div>
-        </div>
-
-        <!-- Resumen de compra -->
-        <div class="col-md-4">
-            <div class="border p-3">
-                <h4>Total de Compra</h4>
-                <p>Mesa redonda: 1 x 150.00</p>
-                <p>Mesa cuadrada: 1 x 200.00</p>
-                <p>Costo de envío: 30.00</p>
-                <h5 class="text-success">Monto a pagar: 350.00</h5>
-                <button class="btn btn-success btn-block">Pagar</button>
-                <button class="btn btn-danger btn-block">Cancelar</button>
-            </div>
+    <!-- Contenido de Mis Pedidos -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Mis Pedidos</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID Pedido</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Total</th>
+                        <th>Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1001</td>
+                        <td>2025-02-23</td>
+                        <td><span class="badge bg-success">Enviado</span></td>
+                        <td>$500.00</td>
+                        <td><a href="detalle_pedido.html" class="btn btn-primary btn-sm">Ver detalles</a></td>
+                    </tr>
+                    <tr>
+                        <td>#1002</td>
+                        <td>2025-02-20</td>
+                        <td><span class="badge bg-warning">Pendiente</span></td>
+                        <td>$300.00</td>
+                        <td><a href="detalle_pedido.html" class="btn btn-primary btn-sm">Ver detalles</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
